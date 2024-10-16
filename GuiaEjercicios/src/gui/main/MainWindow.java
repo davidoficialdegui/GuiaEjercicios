@@ -2,6 +2,7 @@ package gui.main;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +10,9 @@ import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JList;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
@@ -66,6 +70,33 @@ public class MainWindow extends JFrame {
 		
 		add(panelTabbed, BorderLayout.CENTER);
 		
+		
+		
+		// Menu
+		
+		JMenuBar menuBar = new JMenuBar();  // Barra de menu
+        setJMenuBar(menuBar);
+
+        JMenu mFichero = new JMenu("Fichero");  // Añadir a la barra del menu
+        menuBar.add(mFichero);
+        
+        JMenuItem nuevoAtletaMenuItem = new JMenuItem("Nuevo atleta...");  // Dentro de una pestaña de menu
+        mFichero.add(nuevoAtletaMenuItem);
+        
+        mFichero.addSeparator();  // Linea de saparacion entre elementos dentro de una pestaña
+        
+        JMenuItem importarMenuItem = new JMenuItem("Impotar...");  
+        mFichero.add(importarMenuItem);
+        
+        JMenuItem exportarMenuItem = new JMenuItem("Exportar...");  
+        mFichero.add(exportarMenuItem);
+        
+        mFichero.addSeparator();
+        
+        JMenuItem salirMenuItem = new JMenuItem("Salir");
+        mFichero.add(salirMenuItem);
+        
+      
 		
 		
 		
